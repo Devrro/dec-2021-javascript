@@ -57,7 +57,7 @@
 // TASK 5
 // let h = 23;
 // let w = 10;
-// let s = (h*w)/2;
+// let s = (h*w)/2 + '' + 'cm';
 
 // TASK 6
 //const PI = 3.14
