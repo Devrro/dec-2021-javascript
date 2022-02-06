@@ -1,0 +1,19 @@
+.wrap{
+    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+}
+.post-card{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 2px;
+    width: 250px;
+    background: #f1f1f1;
+    box-shadow: 1px 1px 0 1px rgba(0,0,0,0.750);
+    display: flex;
+    flex-direction: column;
+}

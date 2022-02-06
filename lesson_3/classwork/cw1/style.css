@@ -1,0 +1,77 @@
+.first_list{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.simpsons_family_container{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 600px;
+}
+.simpsons_family_container:nth-last-of-type(2){
+    margin: 50px 0 0 0;
+    width: 100vw;
+    height: 65vh;
+}
+.simpsons__card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.simpsons_picture{
+    display: inline-block;
+    width: 100px;
+}
+.simpsons__card_2{
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+
+    height: 830px;
+    background: #bebebe;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px;
+}
+.simpsons__card_2_picture{
+    position: absolute;
+    bottom: 30px;
+    height: 300px;
+}
+.card_container{
+    margin-top: 100px;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 600px;
+    background: #fce1e1;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.4);
+}
+.product-title{
+    text-transform: capitalize;
+    font-size: 40px;
+    text-align: center;
+}
+.product-image{
+    display: inline-block;
+    width: 300px;
+}
