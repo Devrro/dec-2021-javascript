@@ -6,6 +6,7 @@ function bobDoSomething() {
         console.log(arguments[0] + arguments[1]);
     }
 }
+bobDoSomething(1,2)
 
 // - створити функцію яка приймає два масиви та складає значення елементів з однаковими індексами та повертає новий результатуючий масив.
 //
@@ -27,7 +28,7 @@ function arrayAdd(lst1, lst2) {
     }
 
 }
-
+console.log(arrayAdd([1,2,3,4,5],[1,2,3,4,5]))
 
 // - Створити функцію яка приймає масив будь яких об'єктів, та повертає масив ключів всіх обєктів
 // EXAMPLE:
@@ -42,7 +43,7 @@ function arrayOfKeys(array) {
     }
     return keys
 }
-
+console.log(arrayOfKeys([{name: 'Dima', age: 13}, {model: 'Camry'}] ))
 
 //- Створити функцію яка приймає масив будь-яких об'єктів, та повертає масив значень всіх обєктів
 //EXAMPLE:
