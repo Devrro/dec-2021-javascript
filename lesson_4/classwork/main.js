@@ -120,7 +120,9 @@ function randomArrayLimited(count, limit) {
         lst.push(Math.random() * (limit + 1));
     }
     console.log(lst)
+    return lst
 }
+console.log(randomArrayLimited(100, 999));
 
 // - Функція приймає масив та робить з нього новий масив у зворотньому порядку. [1,2,3] - [3,2,1]
 function lstRevers(lst) {
