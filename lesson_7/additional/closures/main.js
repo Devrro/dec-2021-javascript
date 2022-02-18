@@ -12,7 +12,7 @@ function UserCard(n) {
         this.historyLogs.push({
             operationType: operation, credits: credits, operationTime:
                 `${new Date().getDate()}/`
-                + parseInt(`${new Date().getMonth()}`)
+                + (1 + parseInt(`${new Date().getMonth()}`))
                 + '/'
                 + `${new Date().getFullYear()}`
                 + ','
