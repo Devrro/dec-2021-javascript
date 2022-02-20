@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fight Club</title>
+</head>
+<body>
+<div id="content"></div>
+<h1>Правила бойцовского клуба</h1>
+<div id="wrap">
+    <div class="rules rule1">
+        <h2>Первое правило Бойцовского клуба.</h2>
+        <p>Никому не рассказывать о Бойцовском клубе.</p>
+    </div>
+    <div class="rules rule2">
+        <h2>Второе правило Бойцовского клуба.</h2>
+        <p>Никогда никому не рассказывать о Бойцовском клубе.</p>
+    </div>
+    <div class="rules rule3">
+        <h2>Третье правило Бойцовского клуба.</h2>
+        <p>В схватке участвуют только двое.</p>
+        <div class="stange rule">
+            <h2>Третье правило Бойцовского клуба.</h2>
+            <p>В схватке участвуют только двое.</p>
+            <div class="go_dipper rule">
+                <h2>Третье правило Бойцовского клуба.</h2>
+                <p>В схватке участвуют только двое.</p>
+            </div>
+        </div>
+    </div>
+    <div class="rules rule4">
+        <h2>Четвертое правило Бойцовского клуба.</h2>
+        <p>Не более одного поединка за один раз.</p>
+    </div>
+
+    <div class="rules rule5">
+        <h2>Пятое правило Бойцовского клуба.</h2>
+        <p>Бойцы сражаются без обуви и голые по пояс.</p>
+    </div>
+    <div class="rules rule6">
+        <h2>Шестое правило Бойцовского клуба.</h2>
+        <p>Поединок продолжается столько, сколько потребуется.</p>
+    </div>
+    <div class="rules rule7">
+        <h2>Седьмое правило Бойцовского клуба.</h2>
+        <p>Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок
+            окончен.</p>
+    </div>
+    <div class="rules rule8">
+        <h2>Восьмое и последнее правило Бойцовского клуба.</h2>
+        <p>Новичок обязан принять бой.</p>
+    </div>
+</div>
+
+<script>
+    function isIterable(value) {
+        return Symbol.iterator in Object(value);
+    }
+
+    arr = []
+
+    function recursive(start) {
+
+        let children = start.children
+        // console.log(children)
+        if (isIterable(children)) {
+            for (const elem of children) {
+                if (elem.className !== '') {
+                    let temp = elem.className.split(' ')
+                    for (const classCheck of temp) {
+                        if (!arr.includes(classCheck)) {
+                            arr.push(classCheck)
+                        }
+                    }
+                }
+                recursive(elem)
+            }
+        }
+    }
+
+    recursive(document.body)
+    console.log(arr)
+</script>
+</body>
+</html>
