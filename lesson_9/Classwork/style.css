@@ -1,0 +1,43 @@
+.main_simpsons_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.simpsons_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    margin: 20px 0;
+    background-color: #ffdbdb;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(166, 166, 166);
+}
+.simpsonMember{
+    width: 100px;
+}
+.block_head{
+    display: flex;
+}
+.block_head>div{
+    margin: 0 5px;
+}
+.nextText{
+    display: flex;
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-items: center;
+}
+.courseBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    background: #dcdcdc;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
