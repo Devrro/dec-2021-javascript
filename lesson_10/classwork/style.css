@@ -1,0 +1,30 @@
+.block_table{
+    background: #9a9a9a;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px 0;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+.table{
+    background: #79d979;
+    border-radius: 5px;
+}
+
+.nWordChecker{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.nWordInput{
+    width: 200px;
+    margin: 5px;
+    border: 2px dashed black
+}

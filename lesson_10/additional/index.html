@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson_10 Additional</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="filters">
+    <div class="filter">
+        <p>Filter by status: false</p>
+        <input type="checkbox" class="check" name="status" id="checkbox_1">
+    </div>
+    <div class="filter">
+        <p>Filter by age: older then 29</p>
+        <input type="checkbox" class="check" name="age" id="checkbox_2">
+    </div>
+    <div class="filter">
+        <p>Filter by city: Kyiv</p>
+        <input type="checkbox" class="check" name="Kyiv" id="checkbox_3">
+    </div>
+</div>
+<div class="result"></div>
+<!--check the cycle-thing!-->
+<div class="tree" id="001">
+    <div class="tree" id="002_001">
+        <div class="tree" id="003_001_001">
+            <div class="tree" id="004_001_001"></div>
+            <div class="tree" id="004_001_000000000006"></div>
+        </div>
+        <div class="tree" id="003_002_002">
+            <div class="tree" id="004_002_002"></div>
+        </div>
+    </div>
+    <div class="tree" id="002_002">
+        <div class="tree" id="003_002">
+            <div class="tree" id="004_002"></div>
+        </div>
+    </div>
+    <div class="tree" id="002_003"></div>
+    <div class="tree" id="002_004"></div>
+    <div class="tree" id="002_005"></div>
+    <div class="tree" id="002_006"></div>
+    <div class="tree" id="002_007"></div>
+    <div class="tree" id="002_008"></div>
+    <div class="tree" id="002_009"></div>
+    <div class="tree" id="002_011"></div>
+    <div class="tree" id="002_012"></div>
+
+</div>
+
+<script>
+    const messageDisplay = document.getElementById('message')
+
+
+    // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+    //     При лівому кліку миші вивести в консоль інформацію про блок або елемент на який відбувся клік.
+    //     Інформація яку потрібно вивести: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+    const elementReader = () => {
+        document.onclick = function (event) {
+            console.log(
+                event.target.tagName,
+                event.target.classList,
+                event.target.id,
+                event.target.offsetHeight,
+                event.target.offsetWidth)
+
+        }
+    }
+    const showMessage = (message) => {
+        if (!document.getElementsByClassName('message_element')[0]) {
+            const messageElement = document.createElement('p')
+            messageElement.classList.add('message_element')
+            messageElement.textContent = message
+            document.body.append(messageElement)
+            setTimeout(() => document.body.removeChild(messageElement), 2000)
+        }
+    }
+    elementReader()
+
+
+    // - Описати скріпт, котрий, якщо доєднати до будь-якої сторінки дозволить зробити наступне:
+    //     При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
+    //     Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
+
+    const elementReaderAlert = () => {
+        document.onclick = function (event) {
+
+
+            let message =
+                `TAG : ${event.target.tagName}`
+                + '\n'
+                + `CLASSES : ${event.target.classList}`
+                + '\n'
+                + `ID : ${event.target.id}`
+                + '\n'
+                + `HEIGHT : ${event.target.offsetHeight}`
+                + '\n'
+                + `WIDTH : ${event.target.offsetWidth}`;
+
+            showMessage(message)
+        }
+    }
+    elementReaderAlert()
+
+    // - Створити три чекбокси. Кожен з яких активує фільтр для наведеного нижче масиву. Фільтри можуть працювати як поодинці, так і разом.
+    // - Перший відфільтровую користувачів зі статусом false (залишає зі статусом false)
+    // - Другий залишає старших 29 років включно.
+    // - Третій залишає тих у кого місто проживання Київ
+    // - Дані виводити в документ
+    let usersWithAddress = [
+        {id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+        {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+        {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+        {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+        {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+        {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+        {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+        {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+        {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+        {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+        {id: 11, name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+    ];
+
+    let part_builder = (key, variable, appendTo) => {
+        let block_char = document.createElement('div');
+        let variableEq = document.createElement('p');
+        block_char.append(variableEq)
+        variableEq.innerText = key + ' : ' + variable
+        appendTo.append(block_char)
+    }
+    let make_result = (obj, appendTo) => {
+        for (let elem of obj) {
+            let filteringResult = document.createElement('div')
+            filteringResult.classList.add('filteringResult')
+            for (let part in elem) {
+                if (typeof elem[`${part}`] === `object`) {
+                    let subElems = elem[`${part}`]
+                    for (let subElem in subElems) {
+                        part_builder(subElem, subElems[`${subElem}`], filteringResult)
+                    }
+                } else {
+                    part_builder(part, elem[`${part}`], filteringResult)
+                }
+            }
+            appendTo.append(filteringResult)
+        }
+
+    }
+    let chkbox1 = document.getElementById('checkbox_1')
+    let chkbox2 = document.getElementById('checkbox_2')
+    let chkbox3 = document.getElementById('checkbox_3')
+    let checkBoxes =
+        [
+            chkbox1,
+            chkbox2,
+            chkbox3
+        ]
+    let resEle = document.querySelector(".result");
+    let checkEle = document.querySelectorAll(".check");
+
+    function filterArr() {
+        let resArr = usersWithAddress
+        // let resEle = document.createElement('div')
+        checkEle.forEach((item, index) => {
+            if (item.checked && index === 0) {
+                resArr = resArr.filter(x => !x.status);
+                resEle.innerHTML = '';
+                make_result(resArr, resEle)
+            } else if (item.checked && index === 1) {
+                resArr = resArr.filter(x => x.age >= 29);
+                resEle.innerHTML = '';
+                make_result(resArr, resEle)
+            } else if (item.checked && index === 2) {
+                resArr = resArr.filter((x) => x.address.city === 'Kyiv');
+                resEle.innerHTML = '';
+                make_result(resArr, resEle)
+            } else if (item.checked && index === 3) {
+                resArr = resArr.filter((x) => x.address.city === 'Lviv');
+                resEle.innerHTML = '';
+                make_result(resArr, resEle)
+            }
+        });
+    }
+
+    filterArr()
+
+    for (let box of checkBoxes) {
+        box.onclick = function () {
+            if (box.checked) {
+                filterArr()
+            } else if (!checkBoxes.map(x => !x.checked).includes(false)) {
+                resEle.innerHTML = ''
+            }
+        }
+    }
+
+
+    // Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
+    // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
+    // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.
+    //     Когда все дети заканчиваются, мы выходим из данного дочернего элемента и переходим к следующему, лежащему с ним на одном уровне
+
+    //function for button creation
+    let buttons = '';
+    let createButtons = () => {
+        buttons = document.createElement('div')
+        buttons.setAttribute('id', 'buttons')
+        let buttonLeft = document.createElement('button')
+        buttonLeft.setAttribute('id', 'buttonLeft')
+        let buttonRight = document.createElement('button')
+        buttonRight.setAttribute('id', 'buttonRight')
+        buttonLeft.classList.add('button_left')
+        buttonLeft.innerText = 'L'
+        buttonRight.innerText = 'R'
+        buttonRight.classList.add('button_right')
+        buttons.append(buttonLeft, buttonRight)
+        document.body.append(buttons)
+    }
+    let startpoint;
+    let itrOnClick = (domElement) => {
+        if (!buttons) {
+            createButtons()
+        }
+        if (!startpoint) {
+            startpoint = domElement
+        }
+        console.log(domElement)
+
+        let btnR = document.getElementById('buttonRight')
+        let btnL = document.getElementById('buttonLeft')
+        btnR.onclick = function () {
+            if (domElement.hasChildNodes()) {
+                domElement = domElement.children[0]
+            } else if (domElement.nextElementSibling) {
+                domElement = domElement.nextElementSibling
+            } else {
+                while (domElement.parentElement) {
+                    domElement = domElement.parentElement
+                    if (domElement === startpoint) {
+                        return itrOnClick(domElement)
+                    }
+                    if (domElement.nextElementSibling) {
+                        domElement = domElement.nextElementSibling
+                        break
+                    }
+                }
+            }
+            itrOnClick(domElement)
+        }
+        btnL.onclick = function () {
+            if (domElement.parentElement && domElement !== startpoint) {
+                domElement = domElement.parentElement
+            }
+            itrOnClick(domElement)
+        }
+    }
+    itrOnClick(document.getElementById('001'))
+
+</script>
+</body>
+</html>

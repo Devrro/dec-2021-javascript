@@ -1,0 +1,24 @@
+body {
+    font-family: "Roboto Light", serif;
+    font-size: 48px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.changer{
+    font-size: 120px;
+    color: red;
+    font-weight: 900;
+}
